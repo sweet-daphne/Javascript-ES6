@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework</title>
+</head>
+<body>
+  <button id="btn">버튼이에요</button>
+
+  <script>
+    const people = {
+      name : '고민섭',
+      sayHi : function(){
+        console.log(`안녕 나는 ${this.name}`);
+      }
+    }
+
+    people.sayHi();
+
+    const item = {
+      data : [1,2,3,4,5]
+    }
+
+    item.sum = function(){
+      let sumNum = 0;
+
+      this.data.forEach(function(num){
+        sumNum += num;
+      });
+
+      console.log(sumNum);
+    }
+
+    item.sum();
+
+    document.querySelector('#btn').addEventListener('click',function(){
+      setTimeout(()=>{
+        console.log(this.innerHTML);
+      },1000)
+    });
+
+    
+
+  </script>
+</body>
+</html>

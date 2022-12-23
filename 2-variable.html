@@ -27,6 +27,26 @@
     people.name = "park";
     console.log(people.name);
 
+    // 호이스팅
+
+    console.log(test);
+
+    var test = 30;
+
+    console.log(test);
+
+    // 전역변수 better
+    window.name = "ko";
+
+    if(true){
+      let a = 1;
+      var b = 2;
+      if(true){
+        let b = 3;
+      }
+      console.log(b);
+    }
+
     
 
 

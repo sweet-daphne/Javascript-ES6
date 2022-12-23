@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <div style="display: none;">모달창0</div>
+  <div style="display: none;">모달창1</div>
+  <div style="display: none;">모달창2</div>
+
+  <button>버튼0</button>
+  <button>버튼1</button>
+  <button>버튼2</button>
+
+  <script>
+
+    //problem1();
+    function problem1(){
+      console.log(hi);
+      let hi = 'Hello';
+    }
+    // error 
+
+    //problem2();
+    var problem2 = function() {
+      console.log(hi);
+      var hi = 'Hello!';
+    } 
+    // error
+
+    let a = 1;
+    var problem3 = function(){
+      a = 2;
+    }
+    console.log(a);
+    // 1
+
+    let b = 1;
+    var c = 2;
+    window.b = 3;
+    window.c = 4;
+    console.log(b+c);
+    // 5
+
+    for(let i = 1; i < 6 ;i++){
+      setTimeout(function(){console.log(i);}, i*1000);
+    }
+
+    var buttons = document.querySelectorAll('button');
+    var modals = document.querySelectorAll('div');
+
+    for(let i = 0; i < 3 ; i++){
+      buttons[i].addEventListener('click',function(){
+        modals[i].style.display = 'block';
+      });
+    }
+
+  </script>
+  
+</body>
+</html>

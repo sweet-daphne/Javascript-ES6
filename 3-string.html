@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    const name = '고민섭';
+    var str1 = `안녕하세요 ${name} 입니다`;
+
+    function analyze(strings,variables){
+      console.log(strings);
+      console.log(variables);
+
+      console.log(strings[1] + variables + strings[0]);
+      console.log(`${variables}${strings[1]} ${strings[0]}`);
+    }
+
+    analyze`안녕하세요 ${name} 입니다`;
+
+
+
+  </script>
+</body>
+</html>

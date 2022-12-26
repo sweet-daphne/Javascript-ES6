@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let pants = 0;
+    let socks = 100;
+
+    function analyze(string,first,second){
+      let result = (first == 0 ? "다팔렸어요" : first);
+
+      let str = `${string[0]}${result} ${string[1]}${second}`;
+      console.log(str);
+    }
+    
+    console.log(`바지${pants} 양말${socks}`);
+    analyze`바지${pants} 양말${socks}`;
+
+
+  </script>
+</body>
+</html>

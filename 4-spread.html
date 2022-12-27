@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    const array = ['hello','world'];
+    console.log(array);
+    console.log(...array);
+
+    const str1 = 'hello';
+    console.log(str1);
+    console.log(...str1);
+
+    const a = [1,2,3];
+    const b = [4,5];
+
+    const c = [...a, ...b];
+    console.log(c);
+
+    const a2 = [1,2,3];
+    const b2 = [...a2]; //deep copy
+
+    a2[3] = 4;
+    console.log(a2);
+    console.log(b2);
+
+    const o1 = {a : 1, b : 2};
+    const o2 = {a : 2, ...o1};
+    const o3 = {...o1 , a : 2};
+
+    console.log(o2);
+    console.log(o3);
+
+    function sum(a,b,c){
+      console.log(a+b+c);
+    }
+    sum.apply(undefined, [10,20,30]);
+    sum(...[10,20,30]);
+
+    const person = {
+      hello : function(){
+        console.log(this.name,'안녕');
+      }
+    };
+
+    const person2 = {
+      name : 'Daphne'
+    }
+
+    person.hello();
+    person.hello.apply(person2,[1,2]);
+    person.hello.call(person2,1,2);
+    
+
+  </script>
+</body>
+</html>

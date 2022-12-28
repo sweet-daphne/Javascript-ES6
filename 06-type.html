@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // primitive data
+    const val = 1234;
+
+    // reference data
+    const array1 = [1,2,3];
+    const obj = {name : "Ko"};
+
+    let name1 = 'Ko';
+    let name2 = name1;
+    name1 = '박';
+    console.log(name1);
+    console.log(name2);
+
+    let names1 = {name : 'ko'};
+    let names2 = names1;
+    names1.name = '박';
+    console.log(names1);
+    console.log(names2);
+
+    let namee1 = {name : '김'};
+    let namee2 = {name : '김'};
+    console.log(namee1 == namee2);
+
+    let namee11 = {name : '김'};
+    function change(obj){
+      obj = {name : 'park'};
+    }
+    change(namee11);
+    console.log(namee11);
+
+  </script>
+</body>
+</html>

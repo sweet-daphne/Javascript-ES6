@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    class Parent{
+      constructor(Name){
+        this.name = Name;
+        this.sayHi = function(){console.log('hello');} //직접 추가
+      }
+      sayHi2(){ //부모의 prototype에 추가하는 방식
+        console.log('hello2');
+      }
+      sayHello(){
+        console.log('sayHello');
+      }
+    }
+    Parent.prototype.sayHello2 = function(){
+      console.log('sayHello2');
+    }
+
+    var child = new Parent('Daphne');
+    console.log(child);
+    child.sayHi();
+    child.sayHi2();
+
+    console.log(child.__proto__);
+    console.log(Object.getPrototypeOf(child));
+
+  </script>
+</body>
+</html>

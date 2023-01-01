@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    var student1 = {
+      name : 'Ko',
+      age: 15,
+      sayHi : function(){
+        console.log(`안녕하세요 ${this.name}입니다.`);
+      }
+    }
+    student1.sayHi();
+    */
+
+    function Student(nameValue, ageValue){
+      //this : 새로생성되는 object => instance
+      this.name = nameValue;
+      this.age = ageValue;
+      this.sayHi = function(){
+        console.log(`안녕하세요 ${this.name}입니다.`);
+      }
+    }
+
+    var student1 = new Student('달달',39);
+    var student2 = new Student('서향',38);
+
+    student1.sayHi()
+    student2.sayHi();
+
+    //quiz
+    function Product(nameValue, priceValue){
+      this.name = nameValue;
+      this.price = priceValue;
+      this.vat = function(){
+        console.log(`${this.name}의 부가세는 ${this.price*0.1}입니다.`)
+      }
+    }
+
+    const product1 = new Product('shirts',50000);
+    const product2 = new Product('pants',60000);
+
+    console.log(product1);
+    console.log(product2);
+    product1.vat();
+    
+
+  </script>
+</body>
+</html>

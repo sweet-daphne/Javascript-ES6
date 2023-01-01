@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+  function Student(nameValue, ageValue){
+    //this : 새로생성되는 object => instance
+    this.name = nameValue;
+    this.age = ageValue;
+    this.sayHi = function(){
+      console.log(`안녕하세요 ${this.name}입니다.`);
+    }
+  }
+
+  Student.prototype.gender = 'man';
+
+  var student1 = new Student('park',38);
+  console.log(student1);
+  console.log(student1.gender);
+
+  console.log(Student.prototype);
+  console.log(student1.__proto__);
+  
+  var parentObject = {name : 'Kim'};
+  var childObject = {};
+  childObject.__proto__ = parentObject;
+  console.log(childObject.name);
+  
+
+
+
+  </script>
+
+</body>
+</html>

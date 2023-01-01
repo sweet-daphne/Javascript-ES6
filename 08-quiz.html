@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //problem 0
+    function Student(nameValue,ageValue){
+      this.name = nameValue;
+      this.age = ageValue;
+      this.sayHi = function(){
+        console.log(`안녕 나는 ${this.name}이야`);
+      }
+    }
+
+    var student1 = new Student('Kim',20);
+    student1.sayHi();
+
+    //problem 1
+    function Parent(){
+      this.name = "Kim";
+    }
+
+    var a = new Parent();
+    a.__proto__.name = 'Park';
+    console.log(a.name);
+    //Kim
+
+    //problem 2
+    function Student2(Name,Age){
+      this.name = Name;
+      this.age = Age;
+    }
+
+    Student2.prototype.sayHi = function(){
+      console.log(`안녕 나는 ${this.name}이야`);
+    }
+    var student2 = new Student2('Kim',20);
+    student2.sayHi();
+
+
+    //problem 3
+    Array.prototype.remove3 = function(num){
+      for(var i =0; i < this.length;i++){
+        if(this[i] == num){
+          this.splice(i,1);
+        }
+      }
+    }
+
+    var arr = [1,2,3,4,5,6];
+    arr.remove3(5);
+
+    console.log(arr);
+    
+
+  </script>
+</body>
+</html>

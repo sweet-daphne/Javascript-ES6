@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Dog{
+      constructor(dogKind,dogColor){
+        this.type = dogKind;
+        this.color = dogColor;
+      }
+      nextAge(){
+        console.log('잘못된 사용이여');
+      }
+    }
+    const dog1 = new Dog('말티즈','white');
+    const dog2 = new Dog('진돗개','brown');
+    
+    class Cat extends Dog{
+      constructor(catKind,catColor,catAge){
+        super(catKind,catColor);
+        this.age = catAge;
+      }
+      nextAge(){
+        this.age += 1;
+        console.log(this.age);
+      }
+    }
+    const cat1 = new Cat('코숏','white',5);
+    const cat2 = new Cat('러시안블루', 'brown', 2);
+    
+    dog1.nextAge();
+    cat1.nextAge();
+
+    class Unit{
+      constructor(){
+        this.attak = 5;
+        this.hp = 100;
+      }
+      get battlePoint(){
+        return this.attak + this.hp;
+      }
+      set heal(healPoint){
+        this.hp += parseInt(healPoint);
+      }
+    }
+
+    const tank = new Unit();
+    console.log(tank.battlePoint);
+    console.log(tank);
+    tank.heal = 50;
+    console.log(tank);
+
+
+    var data = {
+      odd : [],
+      even : [],
+      arraySetting(...param){
+        console.log(param);
+        param.forEach(item=>{
+          if(item % 2 == 1){
+            this.odd.push(item);
+          }else{
+            this.even.push(item);
+          }
+        });
+        this.odd = this.arraySorting(this.odd);
+        this.even = this.arraySorting(this.even);
+      },
+      arraySorting(paramArray){
+        return paramArray.sort();
+      }
+    }
+
+    data.arraySetting(1,2,3,4,5);
+    console.log(data);
+
+
+    
+
+
+
+  </script>
+  
+</body>
+</html>

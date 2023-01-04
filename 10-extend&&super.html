@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log('what');
+
+    class GrandPapa{
+      constructor(name,name2){
+        this.firstName = "Ko";
+        this.lastName = name;
+      }
+      sayHi(){
+        console.log("안녕 저는 할아버지입니다.");
+      }
+    }
+    //const GrandPapa1 = new GrandPapa('민섭');
+    //console.log(GrandPapa1);
+
+    class Papa extends GrandPapa{
+      constructor(name){
+        super(name); //부모 class의 constructor
+        this.age = 50;
+      }
+      sayHi(){
+        console.log("안녕 저는 아버지입니다.");
+        super.sayHi(); //부모 class의 prototype
+      }
+    }
+
+    const Papa1 = new Papa('민수');
+    console.log(Papa1);
+    Papa1.sayHi();
+
+
+
+
+
+  </script>
+</body>
+</html>

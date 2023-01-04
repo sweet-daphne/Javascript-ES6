@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const people = {
+      name : 'Park',
+      age : 30,
+      get nextAge(){ // get - return
+        return this.age + 1;
+      },
+      set setAge(paramAge){ // set - param once
+        this.age = parseInt(paramAge);
+      }
+    }
+
+    people.setAge = '20';
+    console.log(people.nextAge);
+
+    class Human{
+      constructor(){
+        this.name = 'Ko';
+        this.age = 20;
+      }
+      get nextAge(){
+        return this.age + 1;
+      }
+      set setAge(paramAge){
+        this.age = paramAge;
+      }
+    }
+
+    const Human1 = new Human();
+    console.log(Human1.nextAge);
+
+
+  </script>
+</body>
+</html>

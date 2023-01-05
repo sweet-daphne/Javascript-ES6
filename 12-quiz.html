@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    var [number, address] = [30, 'seoul'];
+    var {address : a, number = 20} = {address, number};
+    console.log(a);
+    console.log(address);
+    console.log(number);
+
+    let info = {
+      body : {
+        height: 190,
+        weight: 70
+      },
+      size: ["상의 Large", "바지 30인치"]
+    };
+    
+    let {
+      body:{
+        height,
+        weight
+      },
+      size:[shirt, pants]
+    } = info;
+    console.log(height);
+    console.log(weight);
+    console.log(shirt);
+    console.log(pants);
+    
+
+
+  </script>
+</body>
+</html>

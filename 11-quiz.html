@@ -14,7 +14,9 @@
         this.color = dogColor;
       }
       nextAge(){
-        console.log('잘못된 사용이여');
+        if(this instanceof Cat){
+          this.age++;
+        }
       }
     }
     const dog1 = new Dog('말티즈','white');
@@ -25,16 +27,15 @@
         super(catKind,catColor);
         this.age = catAge;
       }
-      nextAge(){
-        this.age += 1;
-        console.log(this.age);
-      }
     }
     const cat1 = new Cat('코숏','white',5);
     const cat2 = new Cat('러시안블루', 'brown', 2);
     
     dog1.nextAge();
     cat1.nextAge();
+
+    console.log(dog1);
+    console.log(cat1);
 
     class Unit{
       constructor(){
@@ -60,24 +61,21 @@
       odd : [],
       even : [],
       arraySetting(...param){
-        console.log(param);
         param.forEach(item=>{
           if(item % 2 == 1){
             this.odd.push(item);
           }else{
             this.even.push(item);
           }
-        });
-        this.odd = this.arraySorting(this.odd);
-        this.even = this.arraySorting(this.even);
+        });      
       },
-      arraySorting(paramArray){
-        return paramArray.sort();
+      arraySorting(){
+        return [...this.odd, ...this.even].sort();
       }
     }
 
-    data.arraySetting(1,2,3,4,5);
-    console.log(data);
+    data.arraySetting(5,4,3,2,1);
+    data.arraySorting();
 
 
     

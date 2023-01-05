@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script src="13-import&&export.js"></script> -->
+
+  <script type="module">
+    // import value from '/13-import&&export.js'
+    // console.log(value);
+
+    // import {a,b} from '/13-import&&export.js'
+    // console.log(a);
+    // console.log(b);
+
+    // import value,{a,b} from '/13-import&&export.js'
+    // console.log(a);
+    // console.log(b);
+    // console.log(value);
+
+    // import {a as dan} from '/13-import&&export.js'
+    // console.log(dan);
+
+    import * as lib from '/13-import&&export.js'
+    console.log(lib);
+    console.log(lib.a);
+    console.log(lib.b);
+    console.log(lib.default);
+
+    // IE에선 안된다..... 보통은 src
+
+  </script>
+</body>
+</html>

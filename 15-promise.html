@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // Promise : 성공/실패 판정 기계
+      // then, catch, finally
+      // fulfilled(resolved), pending, rejected
+      const promise = new Promise(function(resolve, reject){
+        // resolve();
+        // reject();
+        setTimeout(function(){
+          resolve();
+        }, 1000);
+      });
+
+      promise.then(function(){
+        console.log('success');
+        console.log(promise);
+      }).catch(function(){
+        console.log('fail');
+      });
+
+      console.log(promise);
+
+      //fetch().then().catch()
+
+  </script>
+</body>
+</html>

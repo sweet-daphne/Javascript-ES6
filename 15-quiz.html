@@ -7,8 +7,85 @@
   <title>Document</title>
 </head>
 <body>
+
+  <img id="test" src="https://codingapple1.github.io/kona.jpg" />
+
   <script>
-    
+    const loading = new Promise(function(resolve,reject){
+      const img = document.querySelector('#test');
+
+      img.addEventListener('load',function(){
+        resolve();
+      });
+
+      img.addEventListener('error',function(){
+        reject();
+      });
+    });
+
+    loading.then(function(){
+      console.log('success');
+    }).catch(function(){
+      console.log('fail');
+    });
+
   </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    // $.ajax({
+    //   type : 'GET',
+    //   url : 'https://codingapple1.github.io/hello.txt'
+    // }).done(function(result){
+    //   console.log(result);
+    // });
+
+    const ajax = new Promise(function(resolve,reject){
+      $.get('https://codingapple1.github.io/hello.txt').done(function(result){
+        resolve(result);
+      });
+    });
+
+    const ajax2 = new Promise(function(resolve,reject){
+      $.get('https://codingapple1.github.io/hello2.txt').done(function(result){
+        resolve(result);
+      });
+    });
+
+    // ajax.then(function(result){
+    //   console.log(result);
+    // }).then(ajax2.then(function(result){
+    //   console.log(result);
+    // }));
+
+    // ajax.then(function(result){
+    //   console.log(result);
+    //   return new Promise(function(resolve,reject){
+    //     $.get('https://codingapple1.github.io/hello2.txt').done(function(result){
+    //       resolve(result);
+    //     });
+    //   });
+    // }).then(function(result){
+    //   console.log(result);
+    // });
+
+    
+    ajaxFnc('https://codingapple1.github.io/hello.txt').then(function(result){
+      console.log(result);
+      return ajaxFnc('https://codingapple1.github.io/hello2.txt');
+    }).then(function(result){
+      console.log(result);
+    });
+    
+    function ajaxFnc(url){
+      return new Promise(function(resolve,reject){
+        $.get(url).done(function(result){
+          resolve(result);
+        });
+      });
+    }
+
+  </script>
+
 </body>
 </html>

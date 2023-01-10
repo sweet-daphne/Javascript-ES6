@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">눌러주세요</button>
+  <script>
+    // async : 함수앞에 쓰면 promise then
+    // async function 안에 await
+    async function add(){
+      const promise = new Promise(function(resolve,reject){
+        const diffCalc = 1 + 1;
+        resolve(100);
+        //reject();
+      });
+
+      // promise.then(function(){
+      //   console.log('success');
+      // });
+
+      try {
+        const results = await promise;
+        console.log(results);
+      } catch {
+        console.log('error');
+      }
+      
+
+    }
+
+    add();
+
+
+    // add().then(function(result){
+    //   console.log(result);
+    //   console.log('success');
+    // });
+
+    async function ex(){
+      const promise = new Promise(function(resolve,reject){
+        document.querySelector('#btn').addEventListener('click',function(){
+          resolve('success');
+        });
+      });
+
+      const results = await promise;
+      console.log(results);
+
+    }
+
+    ex();
+
+
+
+
+
+  </script>
+</body>
+</html>

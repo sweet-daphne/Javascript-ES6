@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const symbol = Symbol('Ex');
+
+        const weight = Symbol('My Secret');
+        const height = Symbol('My Second Secret');
+
+        const person = {name : 'ko', age : 39, [weight]:180};
+        person.weight = 80;
+        person[height] = 175;
+        console.log(person);
+
+        for (let key in person){
+            console.log(person[key]);
+        }
+
+        const a = Symbol('explan1');
+        const b = Symbol('explan1');
+
+        // a === b fasle
+
+        const c = Symbol.for('explan1');
+        const d = Symbol.for('explan1');
+
+        // c === d true
+
+        let array = [2,3,4];
+        array[Symbol.iterator];
+
+    
+
+    </script>
+</body>
+</html>

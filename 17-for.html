@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //const obj = {name: 'ko', age: 39}
+        //console.log(Object.getOwnPropertyDescriptor(obj,'name'));
+
+        class Papa {
+
+        }
+        Papa.prototype.name = "Park";
+
+        var obj = new Papa();
+
+        for (let key in obj){
+            //console.log(obj.hasOwnProperty(key));
+            console.log(`${key} : ${obj[key]}`)
+        }
+
+        var array = [2,3,4,5];
+        // for of : array, string, arguments, nodeList, map, set
+        for (let key of array){
+            console.log(key);
+        }
+
+        console.log(array[Symbol.iterator]());
+
+        let data = [1,2,3,4,5,6,7,8,9];
+
+        for(let key of data){
+            for(let key2 of data){
+                if(key != 1){
+                    console.log(`${key} X ${key2} = ${key * key2}`);
+                }
+            }
+        }
+       
+        const products = [
+            {
+                name1 : 'chair',
+                price1 : 7000                
+            },
+            {
+                name2 : 'sofa',
+                price : 5000                
+            },
+            {
+                name3 : 'desk',
+                price3 : 9000                
+            }
+        ]
+        
+        for(let key of products){            
+            for(let key2 in key){                
+                if(isNaN(parseInt(key2.slice(-1))) == false){
+                    let newValue = key[key2];
+                    let newKey = key2.slice(0,-1);
+                    key[newKey] = newValue;
+                    delete key[key2];
+                }                
+            }
+        }
+        /*let newValue;
+        let newKey;
+
+        for (let item of products) {
+            for (let key in item) {
+                //마지막글자를 숫자로변환했을 때 NaN이 안나오면 (숫자면)
+                if (isNaN(parseInt(key.slice(-1))) == false ) {
+                newValue = item[key];
+                newKey = key.slice(0, -1); 
+                item[newKey] = newValue;
+                delete item[key]; 
+                }
+            }
+        }*/
+        console.log(products);
+
+
+    </script>
+</body>
+</html>

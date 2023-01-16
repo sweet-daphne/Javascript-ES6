@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- <input type="range">
+
+  <div id="mordor"></div>
+
+  <script>
+    document.querySelector('#mordor').attachShadow({mode : 'open'});
+    document.querySelector('#mordor').shadowRoot.innerHTML = 
+    '<p>심연에서 왔도다</p>';
+
+  </script> -->
+
+  <label>Test</label>
+  <custom-input></custom-input>
+
+  <template id="template1">
+    <label>이메일을 입력하세요</label><input>
+    <style>label{color:red}</style>
+  </template>
+
+  <script>
+    class Ex extends HTMLElement{
+      connectedCallback(){
+        this.attachShadow({mode : 'open'});
+        this.shadowRoot.append(template1.content.cloneNode(true));
+        this.shadowRoot.querySelector('label').addEventListener('click',function(){
+          alert('WoW');
+        });
+      }
+    }
+
+    customElements.define("custom-input",Ex);
+
+    //web Component 생성 라이브러리 : Lit, Stencil(props,state지원)
+  </script>
+
+  
+</body>
+</html>
